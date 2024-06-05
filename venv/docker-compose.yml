@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  db:
+    container_name: todo-app-db
+    image: postgres
+    environment:
+      POSTGRES_DB: todo_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "todo-app-db"]
+      timeout: "60s"
+      interval: "30s"
+      retries: 3
+  backend:
+    container_name: todo-app-backend
+    build: .
+    ports:
+      - "5001:5000"
+    depends_on:
+      db:
+        condition: "service_healthy"
