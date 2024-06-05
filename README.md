@@ -4,6 +4,8 @@ This project was created with [Python]
 
 ## Development server
 
+Run `source .venv/bin/activate` to activate python environment
+
 Run `pip install -r requirements.txt` for install dependencies.
 
 Run `python app.py` for a dev server. Navigate to `http://localhost:5000/`.
