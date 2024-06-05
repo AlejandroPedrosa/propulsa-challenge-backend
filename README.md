@@ -1,6 +1,6 @@
 # TodoApp-backend
 
-This project was created with [Python]
+This project was created with Python
 
 ## Development server
 
